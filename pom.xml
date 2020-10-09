@@ -12,6 +12,8 @@
         <module>Generic</module>
         <module>FircoSoft</module>
         <module>Dashboard</module>
+        <module>Staples</module>
+        <module>Amazon</module>
     </modules>
     <dependencyManagement>
         <dependencies><dependency>

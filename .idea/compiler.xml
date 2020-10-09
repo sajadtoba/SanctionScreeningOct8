@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Staples" />
         <module name="Dashboard" />
+        <module name="Amazon" />
         <module name="Generic" />
         <module name="FircoSoft" />
       </profile>
