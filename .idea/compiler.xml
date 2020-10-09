@@ -8,9 +8,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Staples" />
         <module name="Dashboard" />
-        <module name="Amazon" />
+        <module name="CnnDashBoard" />
         <module name="Generic" />
         <module name="FircoSoft" />
+        <module name="ABCAmazon" />
       </profile>
     </annotationProcessing>
   </component>

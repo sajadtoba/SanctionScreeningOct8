@@ -13,8 +13,11 @@
         <module>FircoSoft</module>
         <module>Dashboard</module>
         <module>Staples</module>
-        <module>Amazon</module>
+        <module>ABCAmazon</module>
+        <module>CnnDashBoard</module>
     </modules>
+<!--     What do we need? DependencyManagement then 3 Dependencies 1) selenium-server 2) selenium-jav 3) testng (without scop)-->
+<!--    properties (The benefit of using the properties that we do not need to change the java version for each module manula-->
     <dependencyManagement>
         <dependencies><dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -30,14 +33,39 @@
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
                 <version>7.1.0</version>
-                <scope>test</scope>
+<!--                <scope>test</scope>-->
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
+<!--    <properties>-->
+<!--        <maven.compiler.source>1.8</maven.compiler.source>-->
+<!--        <maven.compiler.target>1.8</maven.compiler.target>-->
+<!--    </properties>-->
+
+
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.7.0</version>-->
+<!--                <configuration>-->
+<!--                    <source>1.8</source>-->
+<!--                    <target>1.8</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <version>3.0.0-M3</version>-->
+<!--                <configuration>-->
+<!--                    <suiteXmlFiles>-->
+<!--                        &lt;!&ndash;                        <suiteXmlFiles>target/test-classes/AmazonTestRunner.xml</suiteXmlFiles>&ndash;&gt;-->
+<!--                    </suiteXmlFiles>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 
 
