@@ -12,7 +12,7 @@ public class DEFAmazon extends CommonAPI {
         //driver.findElement(By.cssSelector("#twotabsearchtextbox")).sendKeys("books best sellers");
         //driver.findElement(By.cssSelector(".nav-input")).click();
         driver.findElement(By.cssSelector("#twotabsearchtextbox")).sendKeys("iphone");
-        driver.findElement(By.xpath("//div[@class='nav-search-submit nav-sprite']//input[@class='nav-input']")).click();
+       // driver.findElement(By.xpath("//div[@class='nav-search-submit nav-sprite']//input[@class='nav-input']")).click();
         System.out.println("Sajad wants to get the Title   :" + driver.getTitle());
     }
     //******************** By Using the Enum key ***********************************

@@ -13,7 +13,8 @@
 
     <test name = "Amazon Home">
         <classes>
-            <class name="home.DEFAmazon"/>
+<!--            <class name="home.DEFAmazon"/>-->
+            <class name="home.AmazonUsingCommenAPIMethods"></class>
             <!--            first we put/ enter the package name of the @Test Class then we put the @Test class name-->
             <!--            <class name="home.AmazonHome"/>-->
 
