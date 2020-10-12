@@ -13,14 +13,14 @@
 
     <test name = "Amazon Home">
         <classes>
+<!--            <class name="home.AmazonUsingCommenAPIMethodsOld"/>-->
 <!--            <class name="home.DEFAmazon"/>-->
-            <class name="home.AmazonUsingCommenAPIMethods"></class>
-            <!--            first we put/ enter the package name of the @Test Class then we put the @Test class name-->
-            <!--            <class name="home.AmazonHome"/>-->
-
-            <!-- search.TestSearch is running the test from the sql table so for           -->
-<!--            <class name="search.TestSearch"/>-->
+            <class name="home.AmazonHome"/>
         </classes>
     </test>
 
 </suite>
+
+
+
+

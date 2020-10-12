@@ -1,7 +1,7 @@
 package home;
 
-import base.CommonAPI;
+import base.OldCommonAPI;
 
-public class StapleHome extends CommonAPI {
+public class StapleHome extends OldCommonAPI {
 
 }
