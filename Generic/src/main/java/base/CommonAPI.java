@@ -102,7 +102,7 @@ public class CommonAPI { // Belong to the main class
 
         if (browserName.equalsIgnoreCase("chrome")) {
             if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", "/Users/abc/Desktop/SanctionScreening/Generic/src/main/java/driver/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "/Users/abc/Desktop/SanctionScreening_Oct112020/Generic/src/main/java/driver/chromedriver");
             } else if (OS.equalsIgnoreCase("Window")) {
                 System.setProperty("webdriver.chrome.driver", "/Users/abc/Desktop/SanctionScreening/Generic/src/main/java/driver/chromedriver");
             }
@@ -121,7 +121,7 @@ public class CommonAPI { // Belong to the main class
             options.addArguments("--disable-notifications");
 
             if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.chrome.driver", "/Users/abc/Desktop/SanctionScreening/Generic/src/main/java/driver/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "/Users/abc/Desktop/SanctionScreening_Oct112020/Generic/src/main/java/driver/chromedriver");
 
             } else if (OS.equalsIgnoreCase("Windows")) {
                 System.setProperty("webdriver.chrome.driver", "/Users/abc/Desktop/SanctionScreening/Generic/src/main/java/driver/chromedriver");

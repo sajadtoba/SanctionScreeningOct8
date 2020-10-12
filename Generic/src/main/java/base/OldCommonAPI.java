@@ -14,7 +14,7 @@ public class OldCommonAPI {
     @BeforeMethod
     @Parameters({"url"})
     public void setUp(String url) {
-        System.setProperty("webdriver.chrome.driver", "/Users/abc/Desktop/SanctionScreening/Generic/src/main/java/driver/chromedriver");
+        System.setProperty("webdriver.chrome.driver","/Users/abc/Desktop/SanctionScreening_Oct112020/Generic/src/main/java/driver/chromedriver");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().maximize();
