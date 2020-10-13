@@ -3,17 +3,17 @@
 
 <suite name="Amazon Automation Script " parallel="false">
 
-    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="useCloudEnv" value="true"/>
     <parameter name="cloudEnvName" value="browserstack"/>
     <parameter name="os" value="OS X"/>
     <parameter name="os_version" value="Sierra"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="85.0"/>
-    <parameter name="url" value="https://www.amazon.com"/>
+    <parameter name="url" value="https://www.walmart.com/"/>
 
-    <test name = "Amazon Home">
+    <test name = "Walmart">
         <classes>
-            <class name="home.AmazonHome"/>
+            <class name="home.Walmart"/>
 
         </classes>
     </test>

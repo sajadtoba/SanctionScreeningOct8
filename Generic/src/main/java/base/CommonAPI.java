@@ -34,7 +34,7 @@ public class CommonAPI { // Belong to the main class
     // SetUp always void  method()
     // Inside the Optional we put the value and name  from the runner.xml file
     // inside the @Parameters we use the name from the runner.xml file
-
+//*********************How to setUp() method with few parameters              **********************************
 
     @Parameters({"useCloudEnv", "cloudEnvName", "os", "os_version", "browserName", "browserVersion", "url"})
     @BeforeMethod
@@ -61,6 +61,9 @@ public class CommonAPI { // Belong to the main class
 
     }      // This is just set up when we run from th
 
+
+    //*********************How to getCloudDriver() method with few parameters              **********************************
+
     // we need to create the return type method that will return the driver
 
 
@@ -86,7 +89,9 @@ public class CommonAPI { // Belong to the main class
     }
 
 
-    //**********************************************************************************************************************************
+    //*********************How to getLocalDriver() method with few parameters              ***********************************************************************
+
+
     // Now we need to get the local driver
     // We need to use the ChromeOption Class (to handle the notifications)
     // We created the return type method with 2 parameters ( OS, browserName) OS = Operating System
@@ -132,6 +137,7 @@ public class CommonAPI { // Belong to the main class
         }
 
 
+
         //***********************Above how to handle the Notifications for both OS operating systems
 
 
@@ -160,6 +166,14 @@ public class CommonAPI { // Belong to the main class
     public void clearField1(String locator) {
         driver.findElement(By.xpath(locator)).clear();
     }
+
+
+
+    //************* clearField ()method with 1 Parameter locator only just to clear the field after each search**********************************
+
+
+
+
 
     // Create a void method with one argument / signature or parameters (String locator) that can clear the typing place
     public void clearField(String locator){
@@ -191,12 +205,7 @@ public class CommonAPI { // Belong to the main class
     }// Belong to the method
 
 
-
-
-
-
-
-
+//******************************* TypeOnElement()method with 2 Parameters locator and value ***********************************************
 
 
 
@@ -243,6 +252,11 @@ public class CommonAPI { // Belong to the main class
 //            }
 //        }
 
+
+    //******************************* clickOnElement()method with 1 Parameters locator only ***********************************
+
+
+
     // Create a void signature () method that will help to click by using any type of locators
     public void clickOnElement(String locator) {
         try { // 1st try block open and close then starts catch () and block which close at the end
@@ -265,7 +279,7 @@ public class CommonAPI { // Belong to the main class
         } // Belong to the 1st catch (Exception(ex) method and code block
     } // Belong to the ()method
 
-
+    //******************************* Extra short       TypeOnElement()method with 2 Parameters locator and value ***********************************
         public void clickOnElement1 (String locator){
             try {
                 driver.findElement(By.cssSelector(locator)).click();
@@ -282,6 +296,6 @@ public class CommonAPI { // Belong to the main class
 
             }
         }
-
+//******************************* Below is class only ***********************************
 
     } // Belong to the Class

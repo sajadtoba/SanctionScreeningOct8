@@ -10,7 +10,7 @@ import java.util.List;
 public class AmazonGetMultipleItems extends CommonAPI {
     // Does not run good need to look in the Dashboard Amazon Home works fine
 
-        @Test(priority = 0)
+        @Test
         public void test1() throws InterruptedException {
             System.out.println(driver.getTitle());
             List<String> list = getItems();
