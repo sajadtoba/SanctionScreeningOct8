@@ -13,17 +13,9 @@
 
     <test name = "Amazon Home">
         <classes>
-<!--            <class name="home.AmazonUsingCommenAPIMethodsOld"/>-->
-<!--            <class name="home.DEFAmazon"/>-->
-<!--            <class name="home.AmazonHome"/>-->
-<!--            <class name="home.AmazonGetMultipleItems"/>-->
-            <class name="home.SajadAmazon"/>
+            <class name="home.AmazonHome"/>
 
         </classes>
     </test>
 
 </suite>
-
-
-
-

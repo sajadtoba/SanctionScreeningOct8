@@ -2,6 +2,7 @@ package base;
 
 import org.apache.commons.exec.OS;
 import org.apache.poi.ss.formula.functions.T;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -98,7 +99,7 @@ public class CommonAPI { // Belong to the main class
 
 
     public WebDriver getLocalDriver(@Optional("mac") String OS, String browserName) { // Method starts
-       // We are using the both Operating Systems OS X and windows to get the Local driver
+        // We are using the both Operating Systems OS X and windows to get the Local driver
 
         if (browserName.equalsIgnoreCase("chrome")) {
             if (OS.equalsIgnoreCase("OS X")) {
@@ -110,10 +111,8 @@ public class CommonAPI { // Belong to the main class
             driver = new ChromeDriver();
         }
 
-            // How to Handle the Notification for both mac and window
-            //***********************Above how to handle the Notifications for both OS operating systems
-
-
+        // How to Handle the Notification for both mac and window
+        //***********************Above how to handle the Notifications for both OS operating systems
 
 
         else if (browserName.equalsIgnoreCase("chrome-options")) {
@@ -133,14 +132,14 @@ public class CommonAPI { // Belong to the main class
         }
 
 
-            //***********************Above how to handle the Notifications for both OS operating systems
+        //***********************Above how to handle the Notifications for both OS operating systems
 
 
-            // I AM GOING TO USE THE GECKODRIVER TO SEE IF IT IS WORKING OR NOT
+        // I AM GOING TO USE THE GECKODRIVER TO SEE IF IT IS WORKING OR NOT
 
-         else if (browserName.equalsIgnoreCase("firefox")) {
+        else if (browserName.equalsIgnoreCase("firefox")) {
             if (OS.equalsIgnoreCase("OS X")) {
-                System.setProperty("webdriver.gecko.driver", "/Users/abc/Desktop/SanctionScreening/Generic/src/main/java/driver/geckodriver");
+                System.setProperty("webdriver.gecko.driver", "/Users/abc/Desktop/SanctionScreening_Oct112020/Generic/src/main/java/driver/geckodriver");
             } else if (OS.equalsIgnoreCase("Window")) {
                 System.setProperty("webdriver.gecko.driver", "/Users/abc/Desktop/SanctionScreening/Generic/src/main/java/driver/geckodriver");
             }
@@ -148,14 +147,141 @@ public class CommonAPI { // Belong to the main class
         }
 
 
-            // I am going to use the ie browser for both OS operating systems
+        // I am going to use the ie browser for both OS operating systems
 
-         else if (browserName.equalsIgnoreCase("ie")) {
-            System.setProperty("webdriver.id.driver", "I need to get the driver");
+        else if (browserName.equalsIgnoreCase("ie")) {
+            System.setProperty("webdriver.id.driver", "/Users/abc/Desktop/SanctionScreening_Oct112020/ABCAmazon/src/test/resources/InternetExplorerBrowserRunnerOnBrowserstack.xml");
             driver = new InternetExplorerDriver();
         }
         return driver;
     }     // belong to the method start
 
 
-} // Belong to the Class
+    public void clearField1(String locator) {
+        driver.findElement(By.xpath(locator)).clear();
+    }
+
+    // Create a void method with one argument / signature or parameters (String locator) that can clear the typing place
+    public void clearField(String locator){
+        try {
+            driver.findElement(By.cssSelector(locator)).clear();
+        }catch (Exception e){
+            try{
+                driver.findElement(By.xpath(locator)).clear();
+            }catch (Exception e1){
+                try{
+                    driver.findElement(By.name(locator)).clear();
+                }catch (Exception e2){
+                    try{
+                        driver.findElement(By.className(locator)).clear();
+                    }catch (Exception e3){
+                        try{
+                            driver.findElement(By.linkText(locator)).clear();
+                        } catch (Exception e4){
+                            try {
+                                driver.findElement(By.partialLinkText(locator)).clear();
+                            } catch (Exception e5){
+                                driver.findElement(By.tagName(locator)).clear();
+                            }// this is the last no more try block inside
+                        } // Belong to the catch(Exception e4) method and code block
+                    }// Belong to the catch(Exception e3) method and code block
+                }// Belong to the catch (Exception e2) method and code block which
+            }// belong to 2nd catch (Exception e1)method and code block
+        }// Belong to the 1st catch(Exception e) code block
+    }// Belong to the method
+
+
+
+
+
+
+
+
+
+
+
+//Type on the search bar window by using any type of locators
+    // in this case we need void method with create 2 parameters
+    // We need to create try and catch because if one is not then we can use the others
+    // try id code block only
+    // catch has () method and code block
+
+    public void typeOnElement(String locator, String value) {
+        try {
+            driver.findElement(By.cssSelector(locator)).sendKeys(value);
+        } catch (Exception e) { // open the exception and it will close at the end. Inside the exception we can have more try blocks
+            // 2nd try
+            try { // opened the 2nd try block
+                driver.findElement(By.xpath(locator)).sendKeys(value);
+            } catch (Exception e1) {                                                 // closed the 2nd try block and 2nd catch starts
+                try { // opened the 3rd try block
+                    driver.findElement(By.id(locator)).sendKeys(value);
+                } catch (Exception e2) {// Closed the try block and starts the catch() and block which closed at the end
+                    try { // opend the 4th try block inside the catch block becasue try block open and close but catch still open
+                        driver.findElement(By.name(locator)).sendKeys(value);
+                    } catch (Exception e3) {// closed the try block and opened the catch block this is the last no more try block needed
+                        driver.findElement(By.className(locator)).sendKeys(value);
+                    }
+                }
+            }
+        }
+    }
+
+//        public void typeOnElement (String locator, String value){
+//            try {
+//                driver.findElement(By.cssSelector(locator)).sendKeys(value);
+//            } catch (Exception ex) {
+//                try {
+//                    driver.findElement(By.className(locator)).sendKeys(value);
+//                } catch (Exception ex2) {
+//                    try {
+//                        driver.findElement(By.id(locator)).sendKeys(value);
+//                    } catch (Exception ex3) {
+//                        driver.findElement(By.xpath(locator)).sendKeys(value);
+//                    }
+//                }
+//            }
+//        }
+
+    // Create a void signature () method that will help to click by using any type of locators
+    public void clickOnElement(String locator) {
+        try { // 1st try block open and close then starts catch () and block which close at the end
+            driver.findElement(By.cssSelector(locator)).click();
+        } catch (Exception ex) {// 1st catch() and block starts that will close at the method
+            try { // open 2nd try block and close the 2nd try block then 2nd catch block open and close at the end
+                driver.findElement(By.xpath(locator)).click();
+            } catch (Exception ex1) {// 2nd try block closed and 2nd catch () and code block open inside the Exception open try block
+                try { // open the 3rd try block and closed then 3rd catch()method and code block open which will close at the end
+                    driver.findElement(By.id(locator)).click();
+                } catch (Exception ex2) {
+                    try { // open the 4th try code block and close then 4th catch () method and code block will open
+                        driver.findElement(By.className(locator));
+                    } catch (Exception ex3) {// closed the 4th try block and opened the catch() and code block
+                        driver.findElement(By.name(locator));
+
+                    } // Belong to the last catch(Exception ex3) and code block
+                } // Belong to the 3rd catch (Exception ex2) method and code block
+            } // Belong to the 2nd catch (Exception ex1) method and code block
+        } // Belong to the 1st catch (Exception(ex) method and code block
+    } // Belong to the ()method
+
+
+        public void clickOnElement1 (String locator){
+            try {
+                driver.findElement(By.cssSelector(locator)).click();
+            } catch (Exception ex) {
+                try {
+                    driver.findElement(By.className(locator)).click();
+                } catch (Exception ex2) {
+                    try {
+                        driver.findElement(By.id(locator)).click();
+                    } catch (Exception ex3) {
+                        driver.findElement(By.xpath(locator)).click();
+                    }
+                }
+
+            }
+        }
+
+
+    } // Belong to the Class

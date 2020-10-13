@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
-public class AmazonHome extends OldCommonAPI {
+public class AmazonHome1 extends OldCommonAPI {
 
 
     @Test
